@@ -1,54 +1,94 @@
-/* Style global pour le formulaire */
+/* Container du formulaire */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Style pour les champs de formulaire */
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #333;
-  }
-  
-  input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
-  }
-  
-  input:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  /* Affichage des messages d'erreur */
-  small {
-    font-size: 12px;
-    color: red;
-    margin-top: 5px;
-  }
-  
-  /* Style pour le bouton */
-  button {
-    padding: 12px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white
-  }
-  
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre du formulaire */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Étiquette des champs */
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Champs de saisie */
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Bordure des champs de saisie au survol */
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Message d'erreur */
+small {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+}
+
+/* Style du bouton de soumission */
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+/* Effet au survol du bouton */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Désactiver le bouton si le formulaire est invalide */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Espacement entre les sections du formulaire */
+div {
+  margin-bottom: 20px;
+}
+
+/* Style du formulaire lorsqu'il est validé avec succès */
+form.success {
+  border: 2px solid #28a745;
+}
+
+/* Section des erreurs de validation */
+div.error {
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 5px;
+  color: #721c24;
+  margin-top: 10px;
+}
