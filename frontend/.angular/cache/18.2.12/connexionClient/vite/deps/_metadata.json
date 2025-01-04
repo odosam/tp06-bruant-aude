@@ -1,0 +1,55 @@
+{
+  "hash": "ccda5f4e",
+  "configHash": "cdc45b96",
+  "lockfileHash": "cba9d174",
+  "browserHash": "99245e84",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "da5d0882",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "988f6748",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "448827c6",
+      "needsInterop": false
+    },
+    "@angular/material/snack-bar": {
+      "src": "../../../../../../node_modules/@angular/material/fesm2022/snack-bar.mjs",
+      "file": "@angular_material_snack-bar.js",
+      "fileHash": "bde9f362",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "d02ff94f",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "7053dbf7",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-SLYRNZY6": {
+      "file": "chunk-SLYRNZY6.js"
+    },
+    "chunk-EXXH5G64": {
+      "file": "chunk-EXXH5G64.js"
+    },
+    "chunk-QURFE6Q4": {
+      "file": "chunk-QURFE6Q4.js"
+    }
+  }
+}

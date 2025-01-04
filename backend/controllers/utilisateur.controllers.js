@@ -7,42 +7,28 @@ function generateAccessToken(user) {
     return jwt.sign(user, ACCESS_TOKEN_SECRET, { expiresIn: '365d' });
   }
 
-// Find a single Utilisateur with an login
-exports.login = (req, res) => {
-  const utilisateur = {
-    login: req.body.login,
-    password: req.body.password
+  const uuid = uuidv4 ();
+  const utilisateur = [{
+    nom: "martin",
+    email : "martin.jean@gmail.com",
+    password : "toto"
+  }];
+
+  exports.login = (req, res) => {
+    const { login, password } = req.body;
+    let pattern = /^[A-Za-z0-9]{1,20}$/;
+    if (pattern.test(login) && pattern.test(password)) {
+      const user = utilisateur.find(user => user.login == login && user.password == password);
+      if (user) {
+        const accessToken = generateAccessToken(user);
+        res.status(200).send({ accessToken });
+      } else {
+        res.status(404).send("Le login ou le mot de passe est incorrect");
+      }
+    } else {
+      res.status(400).send("Le login et le mot de passe doivent être alphanumériques et inférieurs à 20 caractères");
+    }
+
   };
-
-  // Test
-  let pattern = /^[A-Za-z0-9]{1,20}$/;
-  if (pattern.test(utilisateur.login) && pattern.test(utilisateur.password)) {
-
-        const uuid = uuidv4 ();
-        const utilisateur = {
-          nom: "martin",
-          prenom: "jean",
-          login: "marsstin",
-          email : "martin.jean@gmail.com",
-          password : "toto",
-          id : uuid
-        };
-
-        const user = {
-          id: utilisateur.id,
-          name: utilisateur.nom,
-          email: utilisateur.email
-        };
-      
-        
-        let accessToken = generateAccessToken(user);
-        res.setHeader('Authorization', `Bearer ${accessToken}`);
-
-        console.log (accessToken);
-
-      
-        res.send(utilisateur);
-    };    
-};
 
 
