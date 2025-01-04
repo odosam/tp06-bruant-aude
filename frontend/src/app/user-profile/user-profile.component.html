@@ -1,0 +1,19 @@
+<div class="user-profile">
+    <h2>Mon Profil</h2>
+  
+    <div *ngIf="!isEditMode">
+      <!-- Affichage des données de l'utilisateur -->
+      <p><strong>Nom :</strong> {{ userData?.name }}</p>
+      <p><strong>Email :</strong> {{ userData?.email }}</p>
+      
+      <!-- Bouton pour activer le mode édition -->
+      <button (click)="toggleEditMode()">Modifier mes informations</button>
+    </div>
+  
+    <div *ngIf="isEditMode">
+      <!-- Formulaire pour modifier les informations utilisateur -->
+      <app-signup [userData]="userData" (formSubmit)="saveChanges($event)"></app-signup>
+      <button (click)="toggleEditMode()">Annuler</button>
+    </div>
+  </div>
+  

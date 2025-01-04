@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +18,10 @@ export class SignupComponent {
 
   @Output() signup = new EventEmitter<{ name : string ; email : string ; password : string ; confirmPassword : string}>();
 
-  constructor (private formBuilder: FormBuilder){
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
     this.signupForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -42,10 +44,14 @@ passwordMatcher(control: any): { [key: string]: boolean } | null {
     if (this.signupForm.valid) {
       console.log('Signup data:', this.signupForm.value);
       this.signup.emit(this.signupForm.value);
+
       this.signupForm.reset();
+
+      this.router.navigate(['/user-profile']);
     }
     else{
       console.log('Form is not valid');
+    
     }
   }
 }

@@ -1,0 +1,23 @@
+<form [formGroup]="SigninForm" (ngSubmit)="onSubmit()">
+
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" />
+    <div *ngIf="SigninForm.get('email')?.invalid && SigninForm.get('email')?.touched">
+      <small *ngIf="SigninForm.get('email')?.hasError('required')">Email is required.</small>
+      <small *ngIf="SigninForm.get('email')?.hasError('email')">Invalid email address.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" />
+    <div *ngIf="SigninForm.get('password')?.invalid && SigninForm.get('password')?.touched">
+      <small *ngIf="SigninForm.get('password')?.hasError('required')">Password is required.</small>
+    </div>
+  </div>
+
+ 
+  <button type="submit" [disabled]="SigninForm.invalid">Sign In</button>
+</form>
